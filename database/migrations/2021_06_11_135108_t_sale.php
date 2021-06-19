@@ -13,7 +13,17 @@ class TSale extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('t_sale', function (Blueprint $table) {
+            $table->bigIncrements('sale_id');
+            $table->bigInteger('member_id');
+            $table->timestamp('sale_date');
+            $table->string('sale_name',50);
+            $table->string('sale_email',255);
+            $table->integer('sale_postal1',5);
+            $table->integer('sale_postal2',5);
+            $table->string('sale_address',100);
+            $table->integer('sale_tel',15);
+        });
     }
 
     /**
