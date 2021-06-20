@@ -14,19 +14,18 @@ class MMember extends Migration
     public function up()
     {
         Schema::create('m_member', function (Blueprint $table) {
-            $table->primary('member_id');
+            $table->bigIncrements('member_id');
             $table->timestamp('member_date');
             $table->string('member_name',50);
             $table->string('member_password',50);
             $table->string('member_email',255);
-            $table->integer('member_postal1',15);
-            $table->integer('member_postal2',15);
+            $table->integer('member_postal1',false,false);
+            $table->integer('member_postal2',false,false);
             $table->string('member_address',100);
-            $table->integer('member_tel',15);
-            $table->integer('member_sex',1);
-            $table->integer('member_birth',10);
+            $table->integer('member_tel',false,false);
+            $table->integer('member_sex',false,false);
+            $table->integer('member_birth',false,false);
 
-            $table->primary(['member_id']);
         });
     }
 
