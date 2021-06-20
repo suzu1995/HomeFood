@@ -19,10 +19,10 @@ class TSale extends Migration
             $table->timestamp('sale_date');
             $table->string('sale_name',50);
             $table->string('sale_email',255);
-            $table->integer('sale_postal1',false,false);
-            $table->integer('sale_postal2',false,false);
+            $table->integer('sale_postal1');
+            $table->integer('sale_postal2');
             $table->string('sale_address',100);
-            $table->integer('sale_tel',false,false);
+            $table->integer('sale_tel');
         });
     }
 

@@ -18,7 +18,7 @@ class TDetail extends Migration
             $table->bigInteger('sale_id');
             $table->bigInteger('product_id');
             $table->string('product_price',30);
-            $table->integer('product_quantity',false,false);
+            $table->integer('product_quantity');
         });
     }
 

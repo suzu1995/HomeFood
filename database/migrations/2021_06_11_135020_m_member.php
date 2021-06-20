@@ -19,12 +19,12 @@ class MMember extends Migration
             $table->string('member_name',50);
             $table->string('member_password',50);
             $table->string('member_email',255);
-            $table->integer('member_postal1',false,false);
-            $table->integer('member_postal2',false,false);
+            $table->integer('member_postal1');
+            $table->integer('member_postal2');
             $table->string('member_address',100);
-            $table->integer('member_tel',false,false);
-            $table->integer('member_sex',false,false);
-            $table->integer('member_birth',false,false);
+            $table->integer('member_tel');
+            $table->integer('member_sex');
+            $table->integer('member_birth');
 
         });
     }
