@@ -17,7 +17,7 @@ class MProduct extends Migration
             $table->bigIncrements('product_id');
             $table->string('product_name',50);
             $table->string('product_price',30);
-            $table->string('product_gazou',30);
+            $table->string('product_gazou',30)->nullable(true);
         });
     }
 
