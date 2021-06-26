@@ -5,14 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class MProduct extends Model
+class TDtail extends Model
 {
     use HasFactory;
+
     //テーブル指定
-    protected $table = 'm_product';
+    protected $table = 't_detail';
 
     //主キーを設定
-    protected $primaryKey = 'product_id';
-
-    public $timestamps = false;
+    protected $primaryKey = 'detail_id';
 }
