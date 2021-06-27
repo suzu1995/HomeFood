@@ -15,14 +15,8 @@ class MStaff extends Model
     //主キーを設定
     protected $primaryKey = 'staff_id';
 
-    public $timestamps = false;
+    public $incrementing = true;
 
-    /**
-     * モデルの属性のデフォルト値
-     *
-     * @var array
-     */
-    // protected $attributes = [
-    //     'delayed' => false,
-    // ];
+    const CREATED_AT = null;
+    const UPDATED_AT = null;
 }

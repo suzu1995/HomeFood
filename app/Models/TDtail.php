@@ -14,4 +14,9 @@ class TDtail extends Model
 
     //主キーを設定
     protected $primaryKey = 'detail_id';
+
+    public $incrementing = true;
+
+    const CREATED_AT = null;
+    const UPDATED_AT = null;
 }

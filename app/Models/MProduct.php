@@ -14,5 +14,8 @@ class MProduct extends Model
     //主キーを設定
     protected $primaryKey = 'product_id';
 
-    public $timestamps = false;
+    public $incrementing = true;
+
+    const CREATED_AT = null;
+    const UPDATED_AT = null;
 }

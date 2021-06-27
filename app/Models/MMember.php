@@ -14,4 +14,9 @@ class MMember extends Model
 
     //主キーを設定
     protected $primaryKey = 'member_id';
+
+    public $incrementing = true;
+
+    const CREATED_AT = null;
+    const UPDATED_AT = null;
 }
