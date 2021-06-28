@@ -19,4 +19,9 @@ class MStaff extends Model
 
     const CREATED_AT = null;
     const UPDATED_AT = null;
+
+    // スタッフのリストを取得する
+    public static function getStaffList() {
+    return MStaff::select(['staff_id', 'staff_name'])->get()->toArray();
+    }
 }
