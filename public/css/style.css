@@ -1,0 +1,83 @@
+.info {
+	table-layout: fixed;
+    width: 450px;
+	background:#FFFFFF;
+}
+
+/* ヘッダー */
+.info thead th {
+	background:#181B39;
+	font-weight: bold;
+	color:#fff;
+}
+
+
+/* ボディ項目・フッター項目 */
+.info tbody th{
+	background:#FFFFFC;
+	font-weight: bold;
+}
+
+/* 偶数行　１行ごとの色変えが不要なら削除 */
+.info tr:nth-child(2n) td {
+    background: #FBFBF6;
+}
+
+   table.info > thead > tr > th:nth-child(1),
+   table.info > tbody > tr > td:nth-child(1){
+       width: 80px;
+   }
+
+   table.info > thead > tr > th:nth-child(2),
+   table.info > tbody > tr > td:nth-child(2){
+        width: 120px;
+        text-align: center;
+   }
+
+   table.info > thead > tr > th:nth-child(3),
+   table.info > tbody > tr > td:nth-child(3){
+        width: 250px;
+        text-align: center;
+   }
+
+   .bg_pattern {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color:#ffff;
+    opacity: 0.4;
+    z-index: -1;
+  }
+  .Polka_v2 {
+    background-image:  radial-gradient(#ffc107 2px, transparent 2px), radial-gradient(#ffc107 2px, #ffffff 2px);
+    background-size: 40px 40px;
+    background-position: 0 0,20px 20px;
+  }
+
+  h2 {
+    position: relative;
+    display: inline-block;
+    padding: 0 65px;
+    text-align: center;
+  }
+
+  h2:before,
+  h2:after {
+    position: absolute;
+    top: calc(50% - 3px);
+    width: 50px;
+    height: 6px;
+    content: '';
+    border-top: solid 2px #000;
+    border-bottom: solid 2px #000;
+  }
+
+  h2:before {
+    left: 0;
+  }
+
+  h2:after {
+    right: 0;
+  }
