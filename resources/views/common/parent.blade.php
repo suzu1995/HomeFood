@@ -5,7 +5,6 @@
     </head>
     <body>
     @yield('header')
-            <p>コンテンツ</p>
     @yield('footer')
     </body>
     </html>

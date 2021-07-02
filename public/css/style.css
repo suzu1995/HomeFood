@@ -40,22 +40,6 @@
         text-align: center;
    }
 
-   .bg_pattern {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color:#ffff;
-    opacity: 0.4;
-    z-index: -1;
-  }
-  .Polka_v2 {
-    background-image:  radial-gradient(#ffc107 2px, transparent 2px), radial-gradient(#ffc107 2px, #ffffff 2px);
-    background-size: 40px 40px;
-    background-position: 0 0,20px 20px;
-  }
-
   h2 {
     position: relative;
     display: inline-block;
@@ -80,4 +64,73 @@
 
   h2:after {
     right: 0;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    font-family: "Hiragino Sans W3", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+    background-color: #ffffff;
+    /* padding-top: 90px; */
+  }
+
+  header {
+    height: 60px;
+    width: 100%;
+    padding: 0px 15px;
+    background-color: #ffffff;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    font-family: 'Anton', sans-serif;
+  }
+
+  .logo {
+    font-size: 25px;
+  }
+
+  nav {
+    margin: 0 0 0 auto;
+  }
+
+  ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  a {
+    color: #000000;
+    text-decoration: none;
+    display: block;
+    line-height: 60px;
+    padding: 0 20px;
+  }
+
+  /*▽▽ヘッダーリストのアンダーバー▽▽*/
+li ::after {
+    position: absolute; /*親要素であるaタグを基準に位置を指定*/
+    bottom: 10px; /*アンダーバーが位置する、各リストの下端からの高さ*/
+    left: 0;/*アンダーバーを各リストの左端に指定*/
+    content: ''; /*本来は、擬似要素に入るテキストなどを’’内に指定。今回はアンダーバーなので何も記載しない*/
+    width: 100%; /*アンダーバーの幅は各リストの幅*/
+    height: 2px; /*アンダーバーの高さ（太さ）*/
+    background: #000000; /*アンダーバーの色*/
+    transform: scale(0, 1);/*アンダーバーの縮尺比率。ホバー前はx方向に0*/
+    transform-origin: center top;/*変形（アンダーバーの伸長）の原点を、liの真ん中指定*/
+    transition: transform 0.75s;/*変形の時間*/
+  }
+
+  li :hover::after {
+    transform: scale(1, 1); /*ホバー後、x軸方向に1（相対値）伸長*/
+  }
+
+  .content{
+      margin-left: 100px;
+      margin-top: 130px;
   }
