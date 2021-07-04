@@ -6,7 +6,7 @@
 
 /* ヘッダー */
 .info thead th {
-	background:#181B39;
+	background:#69491A;
 	font-weight: bold;
 	color:#fff;
 }
@@ -40,35 +40,21 @@
         text-align: center;
    }
 
-  h2 {
-    position: relative;
-    display: inline-block;
-    padding: 0 65px;
-    text-align: center;
-  }
+.heading18 {
+	position: relative;
+	padding-bottom: 10px;
+	font-size: 26px;
+}
 
-  h2:before,
-  h2:after {
-    position: absolute;
-    top: calc(50% - 3px);
-    width: 50px;
-    height: 6px;
-    content: '';
-    border-top: solid 2px #000;
-    border-bottom: solid 2px #000;
-  }
-
-  h2:before {
-    left: 0;
-  }
-
-  h2:after {
-    right: 0;
-  }
-
-  * {
-    box-sizing: border-box;
-  }
+.heading18::after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 20%;
+	height: 3px;
+	background-image: repeating-linear-gradient(90deg, #b4a983 0, #b4a983 8px, rgba(0,0,0,0) 8px, rgba(0,0,0,0) 11px);
+}
 
   body {
     margin: 0;
@@ -78,10 +64,10 @@
   }
 
   header {
-    height: 60px;
+    height: 80px;
     width: 100%;
     padding: 0px 15px;
-    background-color: #ffffff;
+    background-color: #FDF5E6;
     position: fixed;
     top: 0;
     z-index: 10;
@@ -130,7 +116,23 @@ li ::after {
     transform: scale(1, 1); /*ホバー後、x軸方向に1（相対値）伸長*/
   }
 
-  .content{
-      margin-left: 100px;
-      margin-top: 130px;
-  }
+.content{
+    margin-top: 130px;
+    margin-left: 30px;
+}
+.info{
+    margin-top: 30px;
+}
+
+a.btn--kon {
+    color: #fff;
+    background-color: #69491A;
+    border-bottom: 5px solid #69491A;
+}
+
+a.btn--kon:hover {
+    margin-top: 3px;
+    color: #fff;
+    background: #69491A;
+    border-bottom: 2px solid #69491A;
+}

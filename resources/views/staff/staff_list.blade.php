@@ -3,8 +3,9 @@
 @include('common.header')
 <div class="content">
     <div class="content-title">
-        <h2>スタッフ一覧画面</h2>
+        <h2 class="heading18">スタッフ一覧</h2>
     </div>
+    <a class="btn btn--kon btn--cubic" href="{{ route('staff.create') }}">新規登録</a>
     <table class="info">
         <thead>
             <tr>
@@ -16,7 +17,7 @@
         <tbody>
         @foreach ($staff_list as $row)
             <tr>
-                <td><button class="btn">詳細</button></td>
+                <td><a class="btn btn--kon btn--cubic" href="">詳細</a></td>
                 <td>{{$row['staff_id']}}</td>
                 <td>{{$row['staff_name']}}</td>
             </tr>
