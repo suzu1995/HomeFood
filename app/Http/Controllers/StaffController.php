@@ -4,18 +4,20 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\MStaff;
+use App\Http\Requests\StaffRequest;
+use Illuminate\Support\Facades\DB;
+use Exception;
 
 class StaffController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * スタッフの一覧画面を表示する
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
         $staff_list = MStaff::getStaffList();
-        // dd($staff_list);
         return view('staff/staff_list', ['staff_list' => $staff_list]);
     }
 
@@ -26,7 +28,7 @@ class StaffController extends Controller
      */
     public function create()
     {
-        //
+        return view('staff/staff_add');
     }
 
     /**
@@ -35,9 +37,21 @@ class StaffController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StaffRequest $request)
     {
-        //
+        $data = $request->all();
+
+        DB::beginTransaction();
+        try{
+            MStaff::saveStaff($data);
+            DB::commit();
+        }catch(Exception $e){
+            DB::rollBack();
+            return redirect()->action([StaffController::class, 'create'])->withInput()->withErrors(array('DB_ERROR'=> $e->getMessage()));
+        }
+
+        return redirect()->action([StaffController::class, 'index']);
+
     }
 
     /**
