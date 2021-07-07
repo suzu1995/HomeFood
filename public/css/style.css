@@ -124,13 +124,13 @@ li ::after {
     margin-top: 30px;
 }
 
-a.btn--kon {
+.btn--kon {
     color: #fff;
     background-color: #69491A;
     border-bottom: 5px solid #69491A;
 }
 
-a.btn--kon:hover {
+.btn--kon:hover {
     margin-top: 3px;
     color: #fff;
     background: #69491A;
