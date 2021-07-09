@@ -17,7 +17,7 @@
         <tbody>
         @foreach ($staff_list as $row)
             <tr>
-                <td><a class="btn btn--kon btn--cubic" href="">詳細</a></td>
+                <td><a class="btn btn--kon btn--cubic" href="{{ route('staff.edit', $row['staff_id']) }}">詳細</a></td>
                 <td>{{$row['staff_id']}}</td>
                 <td>{{$row['staff_name']}}</td>
             </tr>
@@ -25,3 +25,23 @@
         @endforeach
     </table>
 </div>
+
+<style>
+    table.info > thead > tr > th:nth-child(1),
+    table.info > tbody > tr > td:nth-child(1){
+       width: 60px;
+       text-align: center;
+   }
+
+   table.info > thead > tr > th:nth-child(2),
+   table.info > tbody > tr > td:nth-child(2){
+        width: 80px;
+        text-align: center;
+   }
+
+   table.info > thead > tr > th:nth-child(3),
+   table.info > tbody > tr > td:nth-child(3){
+        width: 250px;
+        text-align: center;
+   }
+</style>

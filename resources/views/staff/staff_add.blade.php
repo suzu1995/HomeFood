@@ -13,7 +13,7 @@
                 @if($errors->has('staff_name'))
                     <span class="text-danger">{{ $errors->first('staff_name') }}</span><br>
                 @endif
-                <input type="text" name="staff_name">
+                <input type="text" name="staff_name" value= "{{ old('staff_name') }}">
             </label>
         </div>
 
@@ -23,6 +23,14 @@
                     <span class="text-danger">{{ $errors->first('staff_password') }}</span><br>
                 @endif
                 <input type="password" name="staff_password">
+            </label>
+        </div>
+        <div class="form font-weight-bold h5">
+            <label>確認用パスワード<br>
+                @if($errors->has('staff_password'))
+                    <span class="text-danger">{{ $errors->first('staff_password') }}</span><br>
+                @endif
+                <input type="password" name="staff_password2">
             </label>
         </div>
         <div class="form">

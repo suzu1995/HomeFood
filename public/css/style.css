@@ -1,44 +1,34 @@
-.info {
-	table-layout: fixed;
-    width: 450px;
-	background:#FFFFFF;
-}
-
 /* ヘッダー */
-.info thead th {
+table.info thead th {
 	background:#69491A;
 	font-weight: bold;
 	color:#fff;
 }
 
+table.info{
+    margin-top: 30px;
+    border-collapse: collapse;
+    border:1px solid #333;
+    table-layout: fixed;
+    width: 450px;
+	background:#FFFFFF;
+}
+table.info td{
+    border-collapse: collapse;
+    border:1px solid #333;
+}
+
 
 /* ボディ項目・フッター項目 */
-.info tbody th{
+table.info tbody th{
 	background:#FFFFFC;
 	font-weight: bold;
 }
 
 /* 偶数行　１行ごとの色変えが不要なら削除 */
-.info tr:nth-child(2n) td {
+table.info tr:nth-child(2n) td {
     background: #FBFBF6;
 }
-
-   table.info > thead > tr > th:nth-child(1),
-   table.info > tbody > tr > td:nth-child(1){
-       width: 80px;
-   }
-
-   table.info > thead > tr > th:nth-child(2),
-   table.info > tbody > tr > td:nth-child(2){
-        width: 120px;
-        text-align: center;
-   }
-
-   table.info > thead > tr > th:nth-child(3),
-   table.info > tbody > tr > td:nth-child(3){
-        width: 250px;
-        text-align: center;
-   }
 
 .heading18 {
 	position: relative;
@@ -119,9 +109,6 @@ li ::after {
 .content{
     margin-top: 130px;
     margin-left: 30px;
-}
-.info{
-    margin-top: 30px;
 }
 
 .btn--kon {
