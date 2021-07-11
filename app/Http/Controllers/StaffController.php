@@ -73,7 +73,8 @@ class StaffController extends Controller
      */
     public function edit($id)
     {
-        //
+        $staff = MStaff::getStaff($id);
+        return view('staff/staff_edit' ,['staff' => $staff]);
     }
 
     /**

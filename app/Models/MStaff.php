@@ -32,7 +32,7 @@ class MStaff extends Model
     }
 
     /**
-     * スタッフのidと名前を登録する
+     * スタッフのidと名前を登録する(一覧)
      *
      * @return void
      */
@@ -44,5 +44,15 @@ class MStaff extends Model
             'staff_name' => $staff_name,
             'staff_password' => $staff_password,
         ]);
+    }
+
+    /**
+     * スタッフのidと名前を取得する
+     *
+     * @return array
+     */
+    public static function getStaff($id) {
+        $staff = MStaff::find($id)->toArray();
+        return $staff;
     }
 }
