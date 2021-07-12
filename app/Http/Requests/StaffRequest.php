@@ -25,7 +25,8 @@ class StaffRequest extends FormRequest
     {
         return [
             'staff_name' => 'required|string|max:25',
-            'staff_password' => 'required|alpha_num|max:12|min:6',
+            'staff_password' => (is_null($this->staff_password)) ? 'nullable|alpha_num|max:12|min:6' : 'required|alpha_num|max:12|min:6',
+            'staff_password2' =>(is_null($this->staff_password)) ? 'nullable|same:staff_password' : 'required|same:staff_password',
         ];
     }
 
@@ -42,6 +43,7 @@ class StaffRequest extends FormRequest
         "alpha_num" => "半角アルファベット数字のみ使用可能です",
         "staff_password.max" => "パスワードは6文字以上12文字以下で入力してください",
         "staff_password.min" => "パスワードは6文字以上12文字以下で入力してください",
+        "staff_password2.same" => "パスワードと同じ値を入力してください",
         ];
       }
 }

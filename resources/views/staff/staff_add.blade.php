@@ -27,8 +27,8 @@
         </div>
         <div class="form font-weight-bold h5">
             <label>確認用パスワード<br>
-                @if($errors->has('staff_password'))
-                    <span class="text-danger">{{ $errors->first('staff_password') }}</span><br>
+                @if($errors->has('staff_password2'))
+                    <span class="text-danger">{{ $errors->first('staff_password2') }}</span><br>
                 @endif
                 <input type="password" name="staff_password2">
             </label>

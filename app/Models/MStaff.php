@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Crypt;
+use Illuminate\Support\Facades\Hash;
 
 class MStaff extends Model
 {
@@ -32,7 +34,7 @@ class MStaff extends Model
     }
 
     /**
-     * スタッフのidと名前を登録する(一覧)
+     * スタッフのidと名前を登録する
      *
      * @return void
      */
@@ -40,10 +42,34 @@ class MStaff extends Model
 
         $staff_name = $data['staff_name'];
         $staff_password = $data['staff_password'];
+        Hash::make($staff_password);
         MStaff::create([
             'staff_name' => $staff_name,
             'staff_password' => $staff_password,
         ]);
+    }
+
+    /**
+     * スタッフのidと名前を更新する
+     *
+     * @return void
+     */
+    public static function updateStaff($data, $id){
+
+        if(is_null($data['staff_password'])){
+            $staff_name = $data['staff_name'];
+            MStaff::where('staff_id',$id)->update([
+                'staff_name' => $staff_name,
+            ]);
+        }else{
+            $staff_name = $data['staff_name'];
+            $staff_password = $data['staff_password'];
+            $staff_password = password_hash( $staff_password, PASSWORD_DEFAULT);
+            MStaff::where('staff_id',$id)->update([
+                'staff_name' => $staff_name,
+                'staff_password' => $staff_password,
+            ]);
+        }
     }
 
     /**

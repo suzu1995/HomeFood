@@ -84,9 +84,20 @@ class StaffController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(StaffRequest $request, $id)
     {
-        //
+        $data = $request->all();
+
+        DB::beginTransaction();
+        try{
+            MStaff::updateStaff($data, $id);
+            DB::commit();
+        }catch(Exception $e){
+            DB::rollBack();
+            return redirect()->action([StaffController::class, 'edit'],['staff' => $id])->withInput()->withErrors(array('DB_ERROR'=> $e->getMessage()));
+        }
+
+        return redirect()->action([StaffController::class, 'index']);
     }
 
     /**
