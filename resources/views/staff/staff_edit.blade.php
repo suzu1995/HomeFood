@@ -5,6 +5,7 @@
     <div class="content-title">
         <h2 class="heading18">スタッフ編集</h2>
     </div><br>
+    <a class="btn btn--kon btn--cubic" href="action={{ route('staff.destroy',$staff['staff_id']) }}">このデータを削除する</a>
     <form method="POST" action={{ route('staff.update',$staff['staff_id']) }}>
         @method('PUT')
         {{ csrf_field() }}
