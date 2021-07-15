@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use App\Models\MStaff;
 use Illuminate\Foundation\Http\FormRequest;
 
 class StaffRequest extends FormRequest
@@ -23,6 +24,7 @@ class StaffRequest extends FormRequest
      */
     public function rules()
     {
+
         return [
             'staff_name' => 'required|string|max:25',
             'staff_password' => (is_null($this->staff_password)) ? 'nullable|alpha_num|max:12|min:6' : 'required|alpha_num|max:12|min:6',

@@ -48,5 +48,6 @@
             <a class="btn btn--kon btn--cubic" href={{ route('staff.index') }}>戻る</a>
             <input class="btn btn--kon btn--cubic" type="submit" name="update" value="更新">
         </div>
+        <input type="hidden" name="staff_id"value="{{$staff['staff_id']}}">
     </form>
 </div>
