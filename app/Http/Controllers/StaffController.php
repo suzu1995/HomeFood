@@ -108,6 +108,8 @@ class StaffController extends Controller
      */
     public function destroy($id)
     {
-        //
+        MStaff::where('id', $id)->delete();
+        return redirect()->action([StaffController::class, 'index']);
+
     }
 }
