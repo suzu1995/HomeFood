@@ -20,3 +20,7 @@ Route::get('/', function () {
 Route::resource('/staff', App\Http\Controllers\StaffController::class)->only([
     'index', 'create', 'edit', 'store','update', 'destroy'
 ])->names('staff');
+
+Route::resource('/food', App\Http\Controllers\StaffController::class)->only([
+    'index', 'create', 'edit', 'store','update', 'destroy'
+])->names('food');
