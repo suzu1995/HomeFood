@@ -18,4 +18,13 @@ class MProduct extends Model
 
     const CREATED_AT = null;
     const UPDATED_AT = null;
+
+    /**
+     * スタッフのidと名前を取得する
+     *
+     * @return array
+     */
+    public static function getProductList() {
+        return Mproduct::select(['product_id', 'product_name'])->get()->toArray();
+        }
 }
