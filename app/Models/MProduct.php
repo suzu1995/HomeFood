@@ -25,6 +25,6 @@ class MProduct extends Model
      * @return array
      */
     public static function getProductList() {
-        return Mproduct::select(['product_id', 'product_name'])->get()->toArray();
+        return Mproduct::select(['product_id', 'product_name','product_price'])->get()->toArray();
         }
 }

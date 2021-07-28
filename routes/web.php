@@ -21,6 +21,6 @@ Route::resource('/staff', App\Http\Controllers\StaffController::class)->only([
     'index', 'create', 'edit', 'store','update', 'destroy'
 ])->names('staff');
 
-Route::resource('/food', App\Http\Controllers\StaffController::class)->only([
+Route::resource('/product', App\Http\Controllers\ProductController::class)->only([
     'index', 'create', 'edit', 'store','update', 'destroy'
-])->names('food');
+])->names('product');
