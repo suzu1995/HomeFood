@@ -3,7 +3,7 @@
 @include('common.header')
 <div class="content">
     <div class="content-title">
-        <h2 class="heading18">スタッフ一覧</h2>
+        <h2 class="heading18">商品一覧</h2>
     </div>
     <a class="btn btn--kon btn--cubic" href="{{ route('product.create') }}">新規登録</a>
     <table class="info">
