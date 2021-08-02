@@ -36,7 +36,18 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+
+        DB::beginTransaction();
+        try{
+            MStaff::saveProduct($data);
+            DB::commit();
+        }catch(Exception $e){
+            DB::rollBack();
+            return redirect()->action([ProductController::class, 'create'])->withInput()->withErrors(array('DB_ERROR'=> $e->getMessage()));
+        }
+
+        return redirect()->action([ProductController::class, 'index']);
     }
 
     /**
