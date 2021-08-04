@@ -26,9 +26,9 @@ class ProductRequest extends FormRequest
     {
 
         return [
-            'staff_name' => 'required|string|max:25',
-            'staff_password' => (is_null($this->staff_password)) ? 'nullable|alpha_num|max:12|min:6' : 'required|alpha_num|max:12|min:6',
-            'staff_password2' =>(is_null($this->staff_password)) ? 'nullable|same:staff_password' : 'required|same:staff_password',
+            'product_name' => 'required|string|max:50',
+            'product_price' => 'required|num|max:30',
+            'product_gazou' => 'mimes:jpg,bmp,png',
         ];
     }
 
@@ -40,12 +40,10 @@ class ProductRequest extends FormRequest
     public function messages() {
         return [
         "required" => "必須項目です",
-        "staff_name.string" => "名前は文字で入力してください",
-        "staff_name.max" => "名前は25文字まで入力可能です",
-        "alpha_num" => "半角アルファベット数字のみ使用可能です",
-        "staff_password.max" => "パスワードは6文字以上12文字以下で入力してください",
-        "staff_password.min" => "パスワードは6文字以上12文字以下で入力してください",
-        "staff_password2.same" => "パスワードと同じ値を入力してください",
+        "product_name.string" => "商品名は文字で入力してください",
+        "product_name.max" => "商品名は25文字まで入力可能です",
+        "num" => "数字のみ使用可能です",
+        "product_gazou.mimes" => "写真ファイルを選択して下さい",
         ];
       }
 }

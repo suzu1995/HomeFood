@@ -21,7 +21,7 @@
                 <td><a class="btn btn--kon btn--cubic" href="{{ route('product.edit', $row['product_id']) }}">詳細</a></td>
                 <td>{{$row['product_id']}}</td>
                 <td>{{$row['product_name']}}</td>
-                <td>{{$row['product_price']}}</td>
+                <td>{{$row['product_price']}}円</td>
             </tr>
         </tbody>
         @endforeach
@@ -49,6 +49,7 @@
 
    table.info > thead > tr > th:nth-child(4){
         width: 100px;
+        text-align: center;
    }
    table.info > tbody > tr > td:nth-child(4){
         text-align: right;

@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\MProduct;
+use Illuminate\Support\Facades\DB;
+use App\Http\Requests\ProductRequest;
+
 
 class ProductController extends Controller
 {
@@ -34,13 +37,13 @@ class ProductController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ProductRequest $request)
     {
         $data = $request->all();
 
         DB::beginTransaction();
         try{
-            MStaff::saveProduct($data);
+            MProduct::saveProduct($data);
             DB::commit();
         }catch(Exception $e){
             DB::rollBack();

@@ -14,17 +14,36 @@ class MProduct extends Model
     //主キーを設定
     protected $primaryKey = 'product_id';
 
+    protected $fillable = ['product_name', 'product_price', 'product_price'];
+
     public $incrementing = true;
 
     const CREATED_AT = null;
     const UPDATED_AT = null;
 
     /**
-     * スタッフのidと名前を取得する
+     * 商品情報を取得する
      *
      * @return array
      */
     public static function getProductList() {
         return Mproduct::select(['product_id', 'product_name','product_price'])->get()->toArray();
         }
+
+    /**
+     * 商品情報を登録する
+     *
+     * @return void
+     */
+    public static function saveProduct($data){
+
+        $product_name = $data['product_name'];
+        $product_price = $data['product_price'];
+        $product_gazou = $data['product_gazou'];
+        MProduct::create([
+            'product_name' => $product_name,
+            'product_price' => $product_price,
+            'product_gazou' => $product_gazou,
+        ]);
+    }
 }
