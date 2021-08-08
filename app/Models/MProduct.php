@@ -14,7 +14,7 @@ class MProduct extends Model
     //主キーを設定
     protected $primaryKey = 'product_id';
 
-    protected $fillable = ['product_name', 'product_price', 'product_price'];
+    protected $fillable = ['product_name', 'product_price', 'product_gazou'];
 
     public $incrementing = true;
 
