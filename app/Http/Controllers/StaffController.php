@@ -62,7 +62,8 @@ class StaffController extends Controller
      */
     public function show($id)
     {
-        //
+        $staff_data = MStaff::getStaff($id);
+        return view('staff/staff_list', ['staff_list' => $staff_data]);
     }
 
     /**
