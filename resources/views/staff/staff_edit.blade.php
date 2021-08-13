@@ -20,14 +20,14 @@
             </label>
         </div>
 
-        {{-- <div class="form font-weight-bold h5">
+        <div class="form font-weight-bold h5">
             <label>現在のパスワード<br>
                 @if($errors->has('current_password'))
                     <span class="text-danger">{{ $errors->first('current_password') }}</span><br>
                 @endif
                 <input type="password" name="current_password">
             </label>
-        </div> --}}
+        </div>
         <div class="form font-weight-bold h5">
             <label>パスワード<br>
                 @if($errors->has('staff_password'))

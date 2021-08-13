@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\Staff;
 
 use App\Models\MStaff;
 use Illuminate\Foundation\Http\FormRequest;

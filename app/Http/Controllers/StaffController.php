@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\MStaff;
-use App\Http\Requests\StaffRequest;
+use App\Http\Requests\Staff\StaffAddRequest;
+use App\Http\Requests\Staff\StaffEditRequest;
 use Illuminate\Support\Facades\DB;
 use Exception;
 
@@ -37,7 +38,7 @@ class StaffController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StaffRequest $request)
+    public function store(StaffAddRequest $request)
     {
         $data = $request->all();
 
@@ -63,7 +64,7 @@ class StaffController extends Controller
     public function show($id)
     {
         $staff_data = MStaff::getStaff($id);
-        return view('staff/staff_list', ['staff_list' => $staff_data]);
+        return view('staff/staff_show', ['staff_data' => $staff_data]);
     }
 
     /**
@@ -85,7 +86,7 @@ class StaffController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(StaffRequest $request, $id)
+    public function update(StaffEditRequest $request, $id)
     {
         $data = $request->all();
 
