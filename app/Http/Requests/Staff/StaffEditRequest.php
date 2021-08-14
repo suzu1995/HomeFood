@@ -18,7 +18,7 @@ class StaffRequest extends FormRequest
     }
 
     /**
-     * スタッフ登録時のバリデーションルール
+     * スタッフ編集時のバリデーションルール
      *
      * @return array
      */
@@ -27,8 +27,8 @@ class StaffRequest extends FormRequest
 
         return [
             'staff_name' => 'required|string|max:25',
-            'staff_password' => (is_null($this->staff_password)) ? 'nullable|alpha_num|max:12|min:6' : 'required|alpha_num|max:12|min:6',
-            'staff_password2' =>(is_null($this->staff_password)) ? 'nullable|same:staff_password' : 'required|same:staff_password',
+            'staff_password' => 'nullable|alpha_num|max:12|min:6',
+            'staff_password2' =>'nullable|same:staff_password',
         ];
     }
 
