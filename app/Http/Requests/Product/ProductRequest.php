@@ -18,7 +18,7 @@ class ProductRequest extends FormRequest
     }
 
     /**
-     * スタッフ登録時のバリデーションルール
+     * 商品登録時のバリデーションルール
      *
      * @return array
      */
@@ -27,8 +27,8 @@ class ProductRequest extends FormRequest
 
         return [
             'product_name' => 'required|string|max:50',
-            'product_price' => 'required|num|max:30',
-            'product_gazou' => 'mimes:jpg,bmp,png',
+            'product_price' => 'required|numeric|max:100000',
+            'product_gazou' => 'nullable|file|image|max:1024',
         ];
     }
 
@@ -41,9 +41,11 @@ class ProductRequest extends FormRequest
         return [
         "required" => "必須項目です",
         "product_name.string" => "商品名は文字で入力してください",
-        "product_name.max" => "商品名は25文字まで入力可能です",
-        "num" => "数字のみ使用可能です",
-        "product_gazou.mimes" => "写真ファイルを選択して下さい",
+        "product_name.max" => "商品名は50文字まで入力可能です",
+        "product_price.max" => "価格は30文字まで入力可能です",
+        "numeric" => "数字のみ使用可能です",
+        "product_gazou.image" => "写真ファイルを選択して下さい",
+        "product_gazou.max" => "画像サイズが1Mを超えています",
         ];
       }
 }

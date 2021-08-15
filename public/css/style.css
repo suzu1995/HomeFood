@@ -54,7 +54,7 @@ table.info tr:nth-child(2n) td {
   }
 
   header {
-    height: 80px;
+    height: 120px;
     width: 100%;
     padding: 0px 15px;
     background-color: #FDF5E6;

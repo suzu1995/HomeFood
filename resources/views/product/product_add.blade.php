@@ -6,7 +6,7 @@
         <h2 class="heading18">商品登録</h2>
     </div><br>
 
-    <form method="POST" action={{ route('product.store') }}>
+    <form method="POST" action={{ route('product.store') }} enctype="multipart/form-data">
         {{ csrf_field() }}
         <div class="form font-weight-bold h5">
             <label>商品名<br>
@@ -22,7 +22,7 @@
                 @if($errors->has('product_price'))
                     <span class="text-danger">{{ $errors->first('product_price') }}</span><br>
                 @endif
-                <input type="text" name="product_price">
+                <input type="text" name="product_price" value= "{{ old('product_price') }}">
             </label>
         </div>
 

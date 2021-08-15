@@ -5,7 +5,7 @@ namespace App\Http\Requests\Staff;
 use App\Models\MStaff;
 use Illuminate\Foundation\Http\FormRequest;
 
-class StaffRequest extends FormRequest
+class StaffAddRequest extends FormRequest
 {
     /**
      * 権限フィルター

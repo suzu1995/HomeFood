@@ -46,4 +46,14 @@ class MProduct extends Model
             'product_gazou' => $product_gazou,
         ]);
     }
+
+    /**
+     * 商品情報を取得する
+     *
+     * @return array
+     */
+    public static function getproduct($id) {
+        $product = MProduct::find($id)->toArray();
+        return $product;
+    }
 }

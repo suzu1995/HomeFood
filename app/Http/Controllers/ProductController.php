@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+// use Illuminate\Http\Request;
 use App\Models\MProduct;
 use Illuminate\Support\Facades\DB;
-use App\Http\Requests\ProductRequest;
+use App\Http\Requests\Product\ProductRequest;
 
 
 class ProductController extends Controller
@@ -34,12 +34,16 @@ class ProductController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\ProductRequest  $request
      * @return \Illuminate\Http\Response
      */
     public function store(ProductRequest $request)
     {
         $data = $request->all();
+        $upload = $request->product_gazou;
+        $gazou = $upload->store('public/images/product');
+        $gazou = explode("public", $gazou);
+        $data['product_gazou'] = $gazou[1];
 
         DB::beginTransaction();
         try{
@@ -61,7 +65,8 @@ class ProductController extends Controller
      */
     public function show($id)
     {
-        //
+        $product_data = MProduct::getProduct($id);
+        return view('product/product_show', ['product_data' => $product_data]);
     }
 
     /**

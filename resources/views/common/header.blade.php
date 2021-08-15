@@ -1,7 +1,7 @@
 <header>
 <!--▽▽ヘッダーロゴ▽▽-->
     <div class="logo">
-        <a href="#"><img src="{{ asset('images/logo.png')}}" width="250" height="70"></a>
+        <a href="#"><img src="{{ asset('images/logo.png')}}"></a>
     </div>
 
     <nav>
